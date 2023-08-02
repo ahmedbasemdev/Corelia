@@ -1,8 +1,10 @@
-from fastapi import FastAPI,File,UploadFile
+from fastapi import FastAPI,File,UploadFile,Body
 import uvicorn
 from routers import upload_router,model_router
 from config import settings
 import os
+import csv
+import pandas as pd
 
 
 
@@ -10,6 +12,7 @@ import os
 app = FastAPI()
 app.include_router(upload_router)
 app.include_router(model_router)
+
 
 
 
